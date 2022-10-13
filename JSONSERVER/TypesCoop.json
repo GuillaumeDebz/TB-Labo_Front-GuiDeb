@@ -1,0 +1,24 @@
+{
+    "typeCoop": [
+        {
+            "id": 1,
+            "type": "Agriculture et horticulture"
+        },
+        {
+            "id": 2,
+            "type": "Secteur financier"
+        },
+        {
+            "id": 3,
+            "type": "Commerce de gros et détail"
+        },
+        {
+            "id": 4,
+            "type": "Services à la collectivité"
+        },
+        {
+            "id": 5,
+            "type": "Pharmacies coopératives"
+        }
+    ]
+}
