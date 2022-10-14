@@ -7,8 +7,8 @@
 
   <label for="statut">Statut</label>
   <br>
-  <input id="statut" type="radio" name="statut" value="particulier" formControlName="statut" (click)="checkStatut(false)" checked=checked> Particulier
-  <input id="statut" type="radio" name="statut" value="cooperative" formControlName="statut" (click)="checkStatut(true)"> Coopérative
+  <input id="statut" type="radio" name="statut" value={{!isCoop}} formControlName="statut" checked=checked> Particulier
+  <input id="statut" type="radio" name="statut" value={{isCoop}} formControlName="statut"> Coopérative
   <br>
 
   <form *ngIf="isCoop">

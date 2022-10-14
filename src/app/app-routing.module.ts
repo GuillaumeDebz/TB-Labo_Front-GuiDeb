@@ -23,6 +23,7 @@ const routes: Routes = [
   { path: "", component: HomeComponent },
 
 	{ path: "compo", children: [
+		{ path: "home", component: HomeComponent },
 		{ path: "events", component: ListeEventsComponent },
 		{ path: "listecooperatives", component: ListeCooperativesComponent },
 		{ path: "inscription", component: InscriptionComponent },

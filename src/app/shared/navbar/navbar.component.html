@@ -1,65 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      
-      <a class="navbar-brand">
-
-        <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle> Menu </button>
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                <a routerLink=""> <button ngbDropdownItem>Home</button></a>
-                <a routerLink="compo/events"> <button ngbDropdownItem>Evènements</button></a>
-                <a routerLink="compo/listecooperatives"><button ngbDropdownItem>Coopératives</button></a>
-                <a routerLink="compo/inscription"><button ngbDropdownItem>Inscription</button></a>
-                <a routerLink="compo/contact"><button ngbDropdownItem>Contact</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
+<nav>
+  <!-- MENU -->
+  <div class="nav-wrapper">
+    <li class="left">
+      <a class="dropdown-trigger" href="#!" data-target="menudropdown">
+        <a href="http://localhost:4200/" title="Techno'Coop">
+          <img alt="technocoop_logo" src="../../../assets/technocoop_logo.jpg" width="150" height="64" />
+        </a>
       </a>
-      <form class="d-flex input-group w-auto">
-        <input
-          type="search"
-          class="form-control rounded"
-          placeholder="Recherche"
-          aria-label="Search"
-          aria-describedby="search-addon"
-        />
-        <span class="input-group-text border-0" id="search-addon">
-          <i class="fas fa-search"></i>
-        </span>
-      </form>
-      <div> Login</div>
-    </div>
-  </nav>
+    </li>
+    <!-- LOGO -->
+    <a href="http://localhost:4200/" class="brand-logo center">Techno'Coop</a>
+
+    <!-- MON COMPTE -->
+    <ul class="right hide-on-med-and-down">
+      <li><a class="dropdown-trigger" href="#!" data-target="moncompte">Mon compte<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+  </div>
+</nav>
 
 
-  <!-- <div class="row">
-    <div class="col">
-      <div ngbDropdown class="d-inline-block">
-        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1</button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
+<!-- LISTE DEROULANTE MENU -->
+<ul id="menudropdown" class="dropdown-content">
+  <li><a routerLink="compo/home">Home</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="compo/events">Evènements</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="compo/listecooperatives">Coopératives</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="compo/inscription">Inscription</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="compo/contact">Contact</a></li>
+</ul>
 
-</body>
 
-</html>
+<!-- LISTE DEROULANTE MON COMPTE -->
+<ul id="moncompte" class="dropdown-content">
+  <li><a routerLink="">S'inscrire</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="">Se connecter</a></li>
+</ul>

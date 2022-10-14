@@ -29,10 +29,6 @@ export class InscriptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  checkStatut(checkCoop:boolean){
-    this.isCoop = checkCoop;
-  }
-
   sendForm(){
 
     if(this.myForm.status == "VALID")
