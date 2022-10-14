@@ -1,39 +1,43 @@
-<header>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </nav>
-    <!-- Navbar -->
-  
-    <!-- Background image -->
-    <div
-      class="p-5 text-center bg-image"
-      style="
-        background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp');
-        height: 400px;
-      "
-    >
-      <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="text-white">
-            <h1 class="mb-3">Inscription</h1>
-            <a class="btn btn-outline-light btn-lg" routerLink="cooperative" role="button">Coopérative</a>
-            <a class="btn btn-outline-light btn-lg" routerLink="particulier" role="button">Particulier</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Background image -->
-  </header>
+<form [formGroup]="myForm">
+
+  <label for="name">Nom</label>
+  <br>
+  <input id="name" type="text" placeholder="JohnCooper" formControlName="name">
+  <br>
+
+  <label for="statut">Statut</label>
+  <br>
+  <input id="statut" type="radio" name="statut" value="particulier" formControlName="statut" (click)="checkStatut(false)" checked=checked> Particulier
+  <input id="statut" type="radio" name="statut" value="cooperative" formControlName="statut" (click)="checkStatut(true)"> Coopérative
+  <br>
+
+  <form *ngIf="isCoop">
+      <label for="typeCoop">Type de coopérative</label>
+      <br>
+      <select id="typeCoop" type="text" formControlName="Type">
+          <option value="1">Agriculture et horticulture</option>
+          <option value="2">Secteur financier</option>
+          <option value="3">Commerce de gros et détail</option>
+          <option value="4">Services à la collectivité</option>
+          <option value="5">Pharmacies coopératives</option>
+      </select>
+      <br>
+  </form>
+
+  <label for="email">Email</label>
+  <br>
+  <input id="email" type="text" placeholder="JohnCooper@email.com" formControlName="email">
+  <br>
+
+  <label for="password">Mot de passe</label>
+  <br>
+  <input id="password" type="text" placeholder="MonMotDePasse" formControlName="password">
+  <br>
+
+  <label for="Confirmpassword">Confirmez votre mot de passe</label>
+  <br>
+  <input id="Confirmpassword" type="text" placeholder="MonMotDePasse" formControlName="Confirmpassword">
+  <br>
+
+  <button [disabled]="!myForm.valid" (click)="sendForm()" class="btn">Envoyer</button>
+</form>
