@@ -9,8 +9,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let elem = document.querySelectorAll('.parallax');
-    M.Parallax.init(elem)
+
   }
 
 }

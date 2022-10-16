@@ -1,10 +1,6 @@
 {
     "typeCoop": [
         {
-            "id": 0,
-            "type": "Particulier"
-        },
-        {
             "id": 1,
             "type": "Agriculture et horticulture"
         },
@@ -24,5 +20,29 @@
             "id": 5,
             "type": "Pharmacies coopératives"
         }
+    ],
+
+    "typeEvent": [
+        {
+            "id": 1,
+            "type": "Soirées de dégustation"
+        },
+        {
+            "id": 2,
+            "type": "Achats et investissements groupés"
+        },
+        {
+            "id": 3,
+            "type": "Conférence"
+        },
+        {
+            "id": 4,
+            "type": "Tombola"
+        },
+        {
+            "id": 5,
+            "type": "Distribution de médicaments"
+        }
     ]
 }
+

@@ -27,7 +27,6 @@ const routes: Routes = [
 		{ path: "events", component: ListeEventsComponent },
 		{ path: "listecooperatives", component: ListeCooperativesComponent },
 		{ path: "inscription", component: InscriptionComponent },
-
     { path: "contact", component: ContactComponent }
   ]},
 

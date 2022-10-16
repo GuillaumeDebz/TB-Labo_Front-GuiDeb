@@ -1,5 +1,16 @@
-<app-navbar></app-navbar>
 
-<router-outlet></router-outlet>
-
- <app-footer></app-footer>
+<mat-toolbar class="example-header">
+    <button mat-button (click)="sidenav.toggle()">Toggle</button>
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+    
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+  <mat-toolbar class="example-footer">Footer</mat-toolbar>

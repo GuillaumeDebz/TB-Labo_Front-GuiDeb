@@ -1,14 +1,14 @@
-<form [formGroup]="myForm">
+<!-- <form [formGroup]="myForm">
 
   <label for="name">Nom</label>
   <br>
   <input id="name" type="text" placeholder="JohnCooper" formControlName="name">
   <br>
 
-  <label for="statut">Statut</label>
+  <label for="status">Status</label>
   <br>
-  <input id="statut" type="radio" name="statut" value={{!isCoop}} formControlName="statut" checked=checked> Particulier
-  <input id="statut" type="radio" name="statut" value={{isCoop}} formControlName="statut"> Coopérative
+  <input id="status" type="radio" name="status" value={{!isCoop}} formControlName="status" checked=checked> Particulier
+  <input id="status" type="radio" name="status" value={{isCoop}} formControlName="status"> Coopérative
   <br>
 
   <form *ngIf="isCoop">
@@ -40,4 +40,12 @@
   <br>
 
   <button [disabled]="!myForm.valid" (click)="sendForm()" class="btn">Envoyer</button>
+</form> -->
+
+<form [formGroup]="myForm">
+<mat-form-field appearance="fill">
+  <mat-label>Nom</mat-label>
+  <input matInput [formControlName]="inscriptionFormProperties.NOM">
+</mat-form-field>
+    <button [disabled]="myForm.invalid">Submit</button>
 </form>

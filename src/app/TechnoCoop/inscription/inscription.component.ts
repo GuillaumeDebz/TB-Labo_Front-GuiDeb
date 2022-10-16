@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { generateMyForm } from './myForm.form';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { InscriptionFormProperties } from 'src/app/shared/models/enum/form-inscription-properties';
 
 @Component({
   selector: 'app-inscription',
@@ -10,38 +9,28 @@ import { generateMyForm } from './myForm.form';
 })
 export class InscriptionComponent implements OnInit {
 
-  isCoop: boolean = true;
+  public myForm!: FormGroup;
 
-  myFormValue! : {
-    name : string,
-    type: string,
-    email : string,
-    password : string,
-  }
-    
-  myForm : FormGroup = generateMyForm(this.fb, this.httpC)
+  public readonly inscriptionFormProperties = InscriptionFormProperties;     // Public = dispo en html
 
   constructor(
-    private fb : FormBuilder,
-    private httpC : HttpClient
-  ) { }
+    private fb: FormBuilder
+  ) {
+    this.myForm = this.generateForm();
+  }
 
   ngOnInit(): void {
   }
 
-  sendForm(){
+  private generateForm(): FormGroup {
+    const myForm = this.fb.group({
+      [InscriptionFormProperties.NOM]: [null, [Validators.minLength(6), Validators.required]],                      // 1er élem= valeur par défaut, 2ème = objet avec param (validators etc) //pas obligé de mettre validators (2eme elem)  
+      // EMAIL: [null, [Validators.email, Validators.required]],
+      // PASSWORD: [null, [Validators.required, Validators.minLength(6)]],
+      // CONFIRMPASSWORD: [null, [Validators.required, Validators.minLength(6)]],
 
-    if(this.myForm.status == "VALID")
-    {
-
-      this.myFormValue = { 
-        name : this.myForm.value["name"],
-        type : this.myForm.value["type"],
-        email : this.myForm.value["email"],
-        password : this.myForm.value["password"],
-        
-      }
-    }
-      
+    })
+    return myForm;
   }
+
 }

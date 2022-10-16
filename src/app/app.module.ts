@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
-// Materialize //
-import * as M from 'materialize-css'
-M.AutoInit()
 
 // APP ROUTE - APP COMPO //
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +10,13 @@ import { AppComponent } from './app.component';
 
 // ADMIN //
 import { UsersComponent } from './admin/users/users.component';
+
+// Material //
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 // COMPO //
@@ -24,6 +28,7 @@ import { ListeCooperativesComponent } from './TechnoCoop/liste-cooperatives/list
 import { ListeEventsComponent } from './TechnoCoop/liste-events/liste-events.component';
 import { ContactComponent } from './TechnoCoop/contact/contact.component';
 import { InscriptionComponent } from './TechnoCoop/inscription/inscription.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -44,7 +49,12 @@ import { InscriptionComponent } from './TechnoCoop/inscription/inscription.compo
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

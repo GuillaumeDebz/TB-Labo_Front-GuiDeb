@@ -7,14 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isConnect: boolean = false
-  timeConnectUser : number = 0
+
 
   constructor() { }
 
   ngOnInit(): void {
 
 
-    let  elems = document.querySelectorAll('.dropdown-trigger');
-    M.Dropdown.init(elems)
   }
 }
