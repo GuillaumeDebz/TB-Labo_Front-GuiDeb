@@ -1,16 +1,36 @@
-
 <mat-toolbar class="example-header">
-    <button mat-button (click)="sidenav.toggle()">Toggle</button>
-  </mat-toolbar>
+  <button mat-button (click)="sidenav.toggle()"> 
+    <img src="../assets/technocoop_logo.jpg" alt=""> Menu
+  </button>
   
-  <mat-sidenav-container class="example-container">
+  
+  <mat-form-field class="monCompte" appearance="fill">
+    <mat-label>Mon compte</mat-label>
+    <mat-select>
+      <mat-option value="side">Email</mat-option>
+      <mat-option value="over">Mot de passe</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <!-- <button class="monCompte">Compte</button> -->
+</mat-toolbar>
+
+<mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+
+    <!-- LISTE DEROULANTE MENU -->
+    <ul id="listeMenu">
+      <li><a routerLink="compo/home">Home</a></li>
+      <li><a routerLink="compo/events">Evènements</a></li>
+      <li><a routerLink="compo/listecooperatives">Coopératives</a></li>
+      <li><a routerLink="compo/inscription">Inscription</a></li>
+      <li><a routerLink="compo/contact">Contact</a></li>
+    </ul>
     
   </mat-sidenav>
-  
+
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-  </mat-sidenav-container>
-  
-  <mat-toolbar class="example-footer">Footer</mat-toolbar>
+</mat-sidenav-container>
+
+<mat-toolbar class="example-footer">Footer</mat-toolbar>

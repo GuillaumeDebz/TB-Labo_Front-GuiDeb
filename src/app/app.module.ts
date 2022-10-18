@@ -17,11 +17,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 // COMPO //
 import { Four0FourComponent } from './TechnoCoop/four0four/four0four.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ListeCooperativesComponent } from './TechnoCoop/liste-cooperatives/liste-cooperatives.component';
@@ -36,13 +37,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     UsersComponent,
     Four0FourComponent,
-    NavbarComponent,
     FooterComponent,
     HomeComponent,
     ListeCooperativesComponent,
     ListeEventsComponent,
     ContactComponent,
-    InscriptionComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +55,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatToolbarModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

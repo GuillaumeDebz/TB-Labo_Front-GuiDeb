@@ -62,7 +62,7 @@
   <mat-label>Mot de passe</mat-label>
   <input [type]="show ? 'text' : 'password'" matInput [formControlName]="inscriptionFormProperties.PASSWORD"> 
 </mat-form-field>
-<button (click)="Afficher()">{{show ? 'Cacher le mot de passe' : 'Afficher le mot de passe'}}</button>
+<button (click)="showPassword()">{{show ? 'Cacher le mot de passe' : 'Afficher le mot de passe'}}</button>
 <br>
 <mat-form-field appearance="fill">
   <mat-label>Confirmez votre mot de passe</mat-label>

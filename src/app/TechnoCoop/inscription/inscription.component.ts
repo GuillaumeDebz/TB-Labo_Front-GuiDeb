@@ -23,7 +23,7 @@ export class InscriptionComponent implements OnInit {
     this.myForm = this.generateForm();
   }
 
-  public Afficher(){
+  public showPassword(){
     this.show = !this.show;
   }
 
