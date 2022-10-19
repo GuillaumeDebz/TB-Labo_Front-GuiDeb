@@ -17,12 +17,14 @@ export class InscriptionComponent implements OnInit {
   public readonly inscriptionFormProperties = InscriptionFormProperties;     // Public = dispo en html
 
   // Afficher/Cacher mot de passe
-  public show: boolean = false;
   public hide: boolean = true;
 
   // Récupérer les types de data
   typesCoopData : any;
   displayedColumns: string[] = ['id', 'type'];
+
+  // Status utilisateur
+  statusUser : string = "Particulier"
 
 
 
@@ -33,7 +35,8 @@ export class InscriptionComponent implements OnInit {
     this.myForm = this.generateForm();
   }
 
-  // Afficher/Cacher mot de passe
+  // Afficher/Cacher mot de passe V2
+  // public show: boolean = false;
   // public showPassword(){
   //   this.show = !this.show;
   // }
@@ -43,6 +46,8 @@ export class InscriptionComponent implements OnInit {
     this.getTypesCoopData()
   }
 
+
+  // FORMULAIRE
   private generateForm(): FormGroup {
     const myForm = this.fb.group({
       [InscriptionFormProperties.TYPE_PROFIL]: ["Particulier", [Validators.required]],
@@ -54,11 +59,35 @@ export class InscriptionComponent implements OnInit {
     return myForm;
   }
 
-  private getTypesCoopData() {
-    this.serviceCoop.getTypesCoop().subscribe((response) => {
-      this.typesCoopData = response
-    });
+
+    // RECUPERER TYPES DE COOP DE LA DB
+    private getTypesCoopData() {
+      this.serviceCoop.getTypesCoop().subscribe((response) => {
+        this.typesCoopData = response
+      });
+    }
+
+
+  // AFFICHER TYPES DE COOP
+  typeCoopSelectChange(){
+    let displaySelectForm = document.getElementById("typeCoop")!
+
+    if(displaySelectForm.style.display == "block")
+    {
+      displaySelectForm.style.display = "none"
+      this.statusUser  = "particulier"
+      console.log(this.statusUser);
+    }
+    else
+    {
+      displaySelectForm.style.display = "block"
+      this.statusUser  = "coop"
+      console.log(this.statusUser);
+    }
   }
+
+
+
 
 }
 

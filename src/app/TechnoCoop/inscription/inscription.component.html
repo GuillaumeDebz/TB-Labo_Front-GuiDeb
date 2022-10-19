@@ -1,10 +1,17 @@
 <form [formGroup]="myForm">
+
   <mat-radio-group>
-    <mat-radio-button value="Particulier" checked>Particulier</mat-radio-button>
-    <mat-radio-button value="Cooperative">Coopérative</mat-radio-button>
+    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_PROFIL" value="Particulier" checked (ngModelChange)="typeCoopSelectChange()">Particulier</mat-radio-button>
+    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_PROFIL" value="Cooperative" (ngModelChange)="typeCoopSelectChange()">Coopérative</mat-radio-button>
   </mat-radio-group>
   <br>
-  <br>
+<label for="typeCoop">Type de coopérative</label>
+    <br>
+    <select id="typeCoop" type="text" formControlName="Type"> 
+        <option *ngFor="let type of typesCoopData"> {{type.type}}</option>
+    </select>
+    <br>
+    <br>
 
   <!-- <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
@@ -24,6 +31,7 @@
   </mat-form-field>
   <br>
 
+  <!-- Afficher/cacher mot de passe V2 -->
   <!-- <mat-form-field appearance="fill">
     <mat-label>Mot de passe</mat-label>
     <input [type]="show ? 'text' : 'password'" matInput [formControlName]="inscriptionFormProperties.PASSWORD">
