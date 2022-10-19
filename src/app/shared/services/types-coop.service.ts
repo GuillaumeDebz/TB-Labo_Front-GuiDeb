@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { profile } from 'src/app/shared/models/interfaces/profile';
+import { Profile } from 'src/app/shared/models/interfaces/profile';
+import { TypeCoop } from '../models/interfaces/typeCoop';
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +15,13 @@ export class TypesCoopService {
   constructor(private http: HttpClient) { }
 
 
-  getTypesCoop(){
-    return this.http.get(this.baseURL + "typeCoop")
+  getTypesCoop(): Observable<TypeCoop[]>{
+    return this.http.get<TypeCoop[]>(this.baseURL + "typeCoop")
   }
 
     // CREER PROFIL
-    // newUser(type: string, name: string, email: string, password: string) {
-    //   let temp : profile [type_profile: typeUser, name_profile: name, email_profile: email, password_profile: password];
-  
-    //   this.http.post<profile>(this.baseURL + "user", temp).subscribe();
-    // }
+    newUser(profil: Profile): Observable<Profile> {
+      return this.http.post<Profile>(this.baseURL + "user", profil);
+    }
 
 }

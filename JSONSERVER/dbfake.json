@@ -1,48 +1,53 @@
 {
-    "typeCoop": [
-        {
-            "id": 1,
-            "type": "Agriculture et horticulture"
-        },
-        {
-            "id": 2,
-            "type": "Secteur financier"
-        },
-        {
-            "id": 3,
-            "type": "Commerce de gros et détail"
-        },
-        {
-            "id": 4,
-            "type": "Services à la collectivité"
-        },
-        {
-            "id": 5,
-            "type": "Pharmacies coopératives"
-        }
-    ],
-
-    "typeEvent": [
-        {
-            "id": 1,
-            "type": "Soirées de dégustation"
-        },
-        {
-            "id": 2,
-            "type": "Achats et investissements groupés"
-        },
-        {
-            "id": 3,
-            "type": "Conférence"
-        },
-        {
-            "id": 4,
-            "type": "Tombola"
-        },
-        {
-            "id": 5,
-            "type": "Distribution de médicaments"
-        }
-    ]
+  "typeCoop": [
+    {
+      "id": 1,
+      "type": "Agriculture et horticulture"
+    },
+    {
+      "id": 2,
+      "type": "Secteur financier"
+    },
+    {
+      "id": 3,
+      "type": "Commerce de gros et détail"
+    },
+    {
+      "id": 4,
+      "type": "Services à la collectivité"
+    },
+    {
+      "id": 5,
+      "type": "Pharmacies coopératives"
+    }
+  ],
+  "typeEvent": [
+    {
+      "id": 1,
+      "type": "Soirées de dégustation"
+    },
+    {
+      "id": 2,
+      "type": "Achats et investissements groupés"
+    },
+    {
+      "id": 3,
+      "type": "Conférence"
+    },
+    {
+      "id": 4,
+      "type": "Tombola"
+    },
+    {
+      "id": 5,
+      "type": "Distribution de médicaments"
+    }
+  ],
+  "user": {
+    "typeUser": "Particulier",
+    "typeCoop": null,
+    "name": "dddd",
+    "email": "dd@email.com",
+    "password": "ddddddd"
+  }
 }
-

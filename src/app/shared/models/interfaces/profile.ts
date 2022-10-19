@@ -1,6 +1,7 @@
-export interface profile {
-    typeUser: string
-    name: string
-    email: string
-    password: string
+export interface Profile {
+    typeUser: string;
+    typeCoop: string;
+    name: string;
+    email: string;
+    password: string;
 }

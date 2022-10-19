@@ -1,16 +1,16 @@
-<form [formGroup]="myForm" class="monForm">
+<form [formGroup]="myForm" class="monForm" (ngSubmit)="createProfile()">
 
   <!-- STATUT USER -->
-  <mat-radio-group>
+  <mat-radio-group [formControlName]="inscriptionFormProperties.TYPE_USER">
     <div class="typeUserLabel">
       <mat-label>Type d'utilisateur</mat-label>
     </div>
-    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_USER" value="Particulier"
+    <mat-radio-button [value]="typeProfil.PARTICULIER"            
       (click)="AfficherTypesCoop(false)">
       Particulier
     </mat-radio-button>
-    <br>
-    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_USER" value="Cooperative"
+    <br>                            <!-- [bindingdepropriété] -->
+    <mat-radio-button [value]="typeProfil.COOPERATIVE"
       (click)="AfficherTypesCoop(true)">
       Coopérative
     </mat-radio-button>
@@ -18,13 +18,16 @@
   <br>
   <br>
 
-  <!-- LISTE TYPES COOP -->
-  <div *ngIf="isCoop == true">
-    <label for="typeCoop">Type de coopérative</label>
-    <br>
-    <select id="typeCoop" type="text" formControlName="Type">
-      <option *ngFor="let typeCoop of typesCoopData"> {{typeCoop.type}}</option>
-    </select>
+  <!-- LISTE TYPES COOP -->                               <!-- Pipe async déclenche auto un observable, gère lui mm le subscribe et unbscribe, le as = response en param de subscribe = valeurs retournées par l'observable-->
+  <div *ngIf="isCoop == true">                            <!-- Plus besoin de stocker dans typesCoopData (pe n'imp), gère tout dans le html-->
+    <mat-form-field *ngIf="typeCoop$ | async as typesCoopData" appearance="fill">
+      <mat-label>Type de coopérative</mat-label>
+      <mat-select id="typeCoop" [formControlName]="inscriptionFormProperties.TYPE_COOP">
+        <mat-option *ngFor="let typeCoop of typesCoopData" [value]="typeCoop.id">
+          {{typeCoop.type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     <br>
     <br>
   </div>
@@ -94,11 +97,10 @@
 
   <p class="champsObligatoires"> * Champs obligatoires </p>
   <br>
-  <button [disabled]="myForm.invalid" class="submitButton">Submit</button>
+  <button [disabled]="myForm.invalid" class="submitButton" type="submit">Submit</button>
 </form>
 <br>
 
-<!-- (click)="createProfile()" -->
 
 
 
