@@ -1,7 +1,7 @@
 <mat-toolbar class="example-header">
-  <button mat-button (click)="sidenav.toggle()"> 
-    <img src="../assets/technocoop_logo.jpg" alt=""> Menu
-  </button>
+  <a (click)="sidenav.toggle()"> 
+    <img src="../assets/technocoop_logo.jpg" alt="Logo Techno'Coop" width="50px">
+  </a>
   
   
   <mat-form-field class="monCompte" appearance="fill">
@@ -18,7 +18,7 @@
   <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
 
     <!-- LISTE DEROULANTE MENU -->
-    <ul id="listeMenu">
+    <ul class="listeMenu">
       <li><a routerLink="compo/home">Home</a></li>
       <li><a routerLink="compo/events">Evènements</a></li>
       <li><a routerLink="compo/listecooperatives">Coopératives</a></li>

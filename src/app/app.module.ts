@@ -18,7 +18,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatIconModule} from '@angular/material/icon';
 
 
 // COMPO //
@@ -56,7 +57,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatToolbarModule,
     MatInputModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

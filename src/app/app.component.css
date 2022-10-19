@@ -11,14 +11,15 @@
     align-items: center;
     justify-content: center;
     width: 200px;
-    background: rgba(255, 0, 0, 0.5);
-  }
+    background: rgba(64, 97, 214, 0.758);
+    }
   
   .example-header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    background: rgba(21, 53, 233, 0.758);
   }
   
   .example-footer {
@@ -26,8 +27,10 @@
     bottom: 0;
     left: 0;
     right: 0;
+    background: rgba(190, 191, 197, 0.758);
   }
   
+  /* Compte */
   .monCompte {
     position: fixed;
     top: 1;
@@ -35,7 +38,19 @@
     right: 0;
   }
 
-  
+  /* Liste du menu */
+  .listeMenu, .listeMenu a, .listeMenu a:visited{
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+  }
+
+  .listeMenu li {
+    padding-bottom: 50px;
+  }
+
+ 
+
   mat-drawer-content {
     padding: 3px;
     display: flex;
