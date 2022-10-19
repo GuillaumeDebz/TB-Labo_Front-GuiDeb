@@ -1,5 +1,5 @@
 export enum InscriptionFormProperties {
-    TYPE_PROFIL = "type",
+    TYPE_USER = "type_user",
     NOM = "nom",
     EMAIL = "email",
     PASSWORD = "password",

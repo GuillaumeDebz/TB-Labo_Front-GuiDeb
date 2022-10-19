@@ -1,29 +1,37 @@
-<mat-toolbar class="example-header">
+<!-- HEADER -->
+<mat-toolbar class="header">
   <a (click)="sidenav.toggle()"> 
     <img src="../assets/technocoop_logo.jpg" alt="Logo Techno'Coop" width="50px">
   </a>
-  
-  
-  <mat-form-field class="monCompte" appearance="fill">
+  <span class="spacer"></span>
+  <h1 class="titleTechnoCoop"> TECHNO'COOP </h1>
+  <span class="spacer"></span>
+   <!-- <mat-icon class="iconMonCompte"> account_box </mat-icon> -->
+
+  <a routerLink="compo/profil" class="monCompte">
+    <mat-icon> account_circle </mat-icon>
+  </a>
+
+  <!-- <mat-form-field class="monCompte" appearance="fill">
     <mat-label>Mon compte</mat-label>
     <mat-select>
       <mat-option value="side">Email</mat-option>
       <mat-option value="over">Mot de passe</mat-option>
     </mat-select>
-  </mat-form-field>
-  <!-- <button class="monCompte">Compte</button> -->
+  </mat-form-field> -->
+
 </mat-toolbar>
 
-<mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" opened class="sidenav">
 
     <!-- LISTE DEROULANTE MENU -->
     <ul class="listeMenu">
-      <li><a routerLink="compo/home">Home</a></li>
-      <li><a routerLink="compo/events">Evènements</a></li>
-      <li><a routerLink="compo/listecooperatives">Coopératives</a></li>
-      <li><a routerLink="compo/inscription">Inscription</a></li>
-      <li><a routerLink="compo/contact">Contact</a></li>
+      <a routerLink="compo/home"><li>Home</li></a>
+      <a routerLink="compo/events"><li>Evènements</li></a>
+      <a routerLink="compo/listecooperatives"><li>Coopératives</li></a>
+      <a routerLink="compo/inscription"><li>Inscription</li></a>
+      <a routerLink="compo/contact"><li>Contact</li></a>
     </ul>
     
   </mat-sidenav>
@@ -33,4 +41,12 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<mat-toolbar class="example-footer">Footer</mat-toolbar>
+<!-- FOOTER -->
+<mat-toolbar class="myfooter">
+<mat-toolbar-row>
+  <span>TECHNO'COOP</span>
+  <span class="spacer"></span>
+  <span class="certifiedFooter"> Certified by Baudoux Inc.</span>
+  <mat-icon>verified_user</mat-icon>
+</mat-toolbar-row>
+</mat-toolbar>

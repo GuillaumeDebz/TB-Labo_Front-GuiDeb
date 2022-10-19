@@ -1,59 +1,95 @@
-.example-container {
-    position: absolute;
-    top: 60px;
-    bottom: 60px;
-    left: 0;
-    right: 0;
-  }
-  
-  .example-sidenav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    background: rgba(64, 97, 214, 0.758);
-    }
-  
-  .example-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(21, 53, 233, 0.758);
-  }
-  
-  .example-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(190, 191, 197, 0.758);
-  }
-  
-  /* Compte */
-  .monCompte {
-    position: fixed;
-    top: 1;
-    left: 1;
-    right: 0;
-  }
+/* HEADER  */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(21, 53, 233, 0.758);
+}
 
-  /* Liste du menu */
-  .listeMenu, .listeMenu a, .listeMenu a:visited{
-    color: white;
-    text-decoration: none;
-    list-style-type: none;
-  }
+.titleTechnoCoop {
+  color: white;
+  font-family: 'ethnocentric', 'arial', sans-serif;
+  font-size: larger;
+}
 
-  .listeMenu li {
-    padding-bottom: 50px;
-  }
+/* COMPTE */
+.monCompte:visited {
+  color: inherit;
+}
 
- 
+/* SIDENAV */
+.container {
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+}
 
-  mat-drawer-content {
+.sidenav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  background: rgba(78, 107, 214, 0.758);
+  font-family: 'ethnocentric', 'arial', sans-serif;
+}
+
+/* LISTE DU MENU */
+.listeMenu,
+.listeMenu a,
+.listeMenu a:visited {
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.listeMenu li {
+  line-height: 50px;
+}
+
+.listeMenu li:hover {
+  background-color: rgba(21, 53, 233, 0.758);
+  border: 2px solid white;
+}
+
+
+/* FOOTER */
+.myfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(190, 191, 197, 0.758);
+  font-family: 'ethnocentric', 'arial', sans-serif;
+}
+
+.certifiedFooter {
+  font-size: small;
+}
+
+
+/* POLICE */
+@font-face {
+  font-family: 'ethnocentric';
+  src: url('../assets/font/ethnocentric_rg.otf') format('OpenType')
+}
+
+/* ICONES ET ESPACES */
+.icon {
+  padding: 0 auto;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+
+
+/* mat-drawer-content {
     padding: 3px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
+  } */

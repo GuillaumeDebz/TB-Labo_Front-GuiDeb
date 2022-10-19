@@ -1,17 +1,33 @@
-<form [formGroup]="myForm">
+<form [formGroup]="myForm" class="monForm">
 
+  <!-- STATUT USER -->
   <mat-radio-group>
-    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_PROFIL" value="Particulier" checked (ngModelChange)="typeCoopSelectChange()">Particulier</mat-radio-button>
-    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_PROFIL" value="Cooperative" (ngModelChange)="typeCoopSelectChange()">Coopérative</mat-radio-button>
+    <div class="typeUserLabel">
+      <mat-label>Type d'utilisateur</mat-label>
+    </div>
+    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_USER" value="Particulier"
+      (click)="AfficherTypesCoop(false)">
+      Particulier
+    </mat-radio-button>
+    <br>
+    <mat-radio-button [formControlName]="inscriptionFormProperties.TYPE_USER" value="Cooperative"
+      (click)="AfficherTypesCoop(true)">
+      Coopérative
+    </mat-radio-button>
   </mat-radio-group>
   <br>
-<label for="typeCoop">Type de coopérative</label>
+  <br>
+
+  <!-- LISTE TYPES COOP -->
+  <div *ngIf="isCoop == true">
+    <label for="typeCoop">Type de coopérative</label>
     <br>
-    <select id="typeCoop" type="text" formControlName="Type"> 
-        <option *ngFor="let type of typesCoopData"> {{type.type}}</option>
+    <select id="typeCoop" type="text" formControlName="Type">
+      <option *ngFor="let typeCoop of typesCoopData"> {{typeCoop.type}}</option>
     </select>
     <br>
     <br>
+  </div>
 
   <!-- <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
@@ -19,17 +35,48 @@
   </mat-form-field>
   <br> -->
 
+
+  <!-- NOM -->
   <mat-form-field appearance="fill">
     <mat-label>Nom</mat-label>
     <input matInput [formControlName]="inscriptionFormProperties.NOM">
   </mat-form-field>
   <br>
 
+
+  <!-- EMAIL -->
   <mat-form-field appearance="fill">
     <mat-label>Email</mat-label>
     <input matInput [formControlName]="inscriptionFormProperties.EMAIL">
   </mat-form-field>
   <br>
+
+
+  <!-- MOT DE PASSE -->
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Mot de passe</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControlName]="inscriptionFormProperties.PASSWORD">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  <br>
+
+
+  <!-- CONFIRMER MOT DE PASSE -->
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Confirmer le mot de passe</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" [formControlName]="inscriptionFormProperties.CONFIRMPASSWORD">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
 
   <!-- Afficher/cacher mot de passe V2 -->
   <!-- <mat-form-field appearance="fill">
@@ -45,40 +92,25 @@
   </mat-form-field>
   <br> -->
 
-  <div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Mot de passe *</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
+  <p class="champsObligatoires"> * Champs obligatoires </p>
   <br>
-
-  <div class="example-container">
-    <mat-form-field appearance="fill">
-      <mat-label>Confirmer le mot de passe *</mat-label>
-      <input matInput [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
-  <br>
-
-  <button [disabled]="myForm.invalid">Submit</button>
+  <button [disabled]="myForm.invalid" class="submitButton">Submit</button>
 </form>
 <br>
 
-<p> * Champs obligatoires </p>
+<!-- (click)="createProfile()" -->
+
+
+
+
+
 
 
 
 
 <!-- ESSAI json-server  -->
 
-<ng-container *ngIf="typesCoopData">
+<!-- <ng-container *ngIf="typesCoopData">
 
   <table mat-table [dataSource]="typesCoopData" class="mat-elevation-z8" style="width: 300px">
 
@@ -97,4 +129,4 @@
 
   </table>
 
-</ng-container>
+</ng-container> -->

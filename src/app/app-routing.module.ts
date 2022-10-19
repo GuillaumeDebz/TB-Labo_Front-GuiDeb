@@ -7,6 +7,9 @@ import { Four0FourComponent } from './TechnoCoop/four0four/four0four.component';
 // Home //
 import { HomeComponent } from './home/home.component';
 
+// Profil //
+import { ProfilComponent } from './TechnoCoop/profil/profil.component';
+
 // Inscription //
 import { InscriptionComponent } from './TechnoCoop/inscription/inscription.component';
 
@@ -27,7 +30,8 @@ const routes: Routes = [
 		{ path: "events", component: ListeEventsComponent },
 		{ path: "listecooperatives", component: ListeCooperativesComponent },
 		{ path: "inscription", component: InscriptionComponent },
-    { path: "contact", component: ContactComponent }
+    { path: "contact", component: ContactComponent },
+    { path: "profil", component: ProfilComponent }
   ]},
 
 

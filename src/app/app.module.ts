@@ -24,13 +24,13 @@ import {MatIconModule} from '@angular/material/icon';
 
 // COMPO //
 import { Four0FourComponent } from './TechnoCoop/four0four/four0four.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ListeCooperativesComponent } from './TechnoCoop/liste-cooperatives/liste-cooperatives.component';
 import { ListeEventsComponent } from './TechnoCoop/liste-events/liste-events.component';
 import { ContactComponent } from './TechnoCoop/contact/contact.component';
 import { InscriptionComponent } from './TechnoCoop/inscription/inscription.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfilComponent } from './TechnoCoop/profil/profil.component';
 
 
 @NgModule({
@@ -38,12 +38,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     UsersComponent,
     Four0FourComponent,
-    FooterComponent,
     HomeComponent,
     ListeCooperativesComponent,
     ListeEventsComponent,
     ContactComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
