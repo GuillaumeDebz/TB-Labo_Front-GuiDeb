@@ -1,1 +1,36 @@
-<p>liste-cooperatives works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="tableauListeCoop">
+        <ng-container *ngIf="listeCoop$ | async as listeCoopData">
+
+            <table mat-table class="mat-elevation-z8" [dataSource]="listeCoop$" style="width: 60%">
+
+                <ng-container matColumnDef="name">
+                    <th class="titleListeCoop" mat-header-cell *matHeaderCellDef> Nom </th>
+                    <td mat-cell *matCellDef="let listeCoop"> {{listeCoop.name}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="typeCoop">
+                    <th class="titleListeCoop" mat-header-cell *matHeaderCellDef> Type </th>
+                    <td mat-cell *matCellDef="let listeCoop"> {{listeCoop.typeCoop}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+
+        </ng-container>
+    </div>
+</body>
+
+</html>

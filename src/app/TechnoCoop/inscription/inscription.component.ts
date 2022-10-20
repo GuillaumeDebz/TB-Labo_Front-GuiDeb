@@ -48,7 +48,7 @@ export class InscriptionComponent implements OnInit {
     private serviceCoop: TypesCoopService
   ) {
     this.myForm = this.generateForm();
-    this.typeCoop$ = this.serviceCoop.getTypesCoop();   // observable que le service return / abrégé de this.service.méthode
+    this.typeCoop$ = this.serviceCoop.getTypesCoop();   // observable que le service return = abrégé de this.service.méthode
   }
 
   // Afficher/Cacher mot de passe V2
@@ -64,7 +64,7 @@ export class InscriptionComponent implements OnInit {
         this.myForm.get(InscriptionFormProperties.TYPE_COOP)?.setValue(null)
         this.myForm.get(InscriptionFormProperties.TYPE_COOP)?.clearValidators()
       }else {
-        this.myForm.get(InscriptionFormProperties.TYPE_COOP)?.setValue(1)
+        this.myForm.get(InscriptionFormProperties.TYPE_COOP)?.setValue("Agriculture et horticulture")
         this.myForm.get(InscriptionFormProperties.TYPE_COOP)?.addValidators(Validators.required)
       }
     })          //value change renvoie observable (donc sub) du type du form (particulier ou coop)  ATTENTION si pas de valeur retournée (tab vide), null dans le setvalue

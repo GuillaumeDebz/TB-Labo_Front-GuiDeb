@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Profile } from 'src/app/shared/models/interfaces/profile';
+import { ListeCoopService } from 'src/app/shared/services/liste-coop.service';
+
 
 @Component({
   selector: 'app-liste-cooperatives',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeCooperativesComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['name', 'typeCoop'];
+  listeCoopData : Profile[] = [];
+  listeCoop$: Observable<Profile[]>;
+
+
+  constructor(
+    private serviceListeCoop : ListeCoopService
+  ) { 
+    this.listeCoop$ = this.serviceListeCoop.getListeCoop();     
+  }
 
   ngOnInit(): void {
   }
 
 }
+

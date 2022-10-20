@@ -1,0 +1,29 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    font-family: 'ethnocentric', 'arial', sans-serif;
+  }
+
+  h1, p {
+    color: rgba(78, 107, 214, 0.758);
+    font-weight: bolder;
+    font-family: 'ethnocentric', 'arial', sans-serif;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+  .infoContact {
+    color: black
+  }
+
+  .containerContact p {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleInfoContact {
+    font-weight: bolder;
+    padding-bottom: 1em;
+  }

@@ -43,11 +43,22 @@
       "type": "Distribution de médicaments"
     }
   ],
-  "user": {
-    "typeUser": "Particulier",
-    "typeCoop": null,
-    "name": "dddd",
-    "email": "dd@email.com",
-    "password": "ddddddd"
-  }
+  "user": [
+    {
+      "typeUser": "Coopérative",
+      "typeCoop": "Commerce de gros et détail",
+      "name": "salut",
+      "email": "monemail@email.com",
+      "password": "motdepassesecret",
+      "id": 1
+    },
+    {
+      "typeUser": "Coopérative",
+      "typeCoop": "Agriculture et horticulture",
+      "name": "Ferme blanche",
+      "email": "fermebl@email.be",
+      "password": "motdepasseferme",
+      "id": 2
+    }
+  ]
 }

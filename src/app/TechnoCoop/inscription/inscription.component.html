@@ -5,11 +5,11 @@
     <div class="typeUserLabel">
       <mat-label>Type d'utilisateur</mat-label>
     </div>
-    <mat-radio-button [value]="typeProfil.PARTICULIER"            
+    <mat-radio-button [value]="typeProfil.PARTICULIER"              
       (click)="AfficherTypesCoop(false)">
       Particulier
-    </mat-radio-button>
-    <br>                            <!-- [bindingdepropriété] -->
+    </mat-radio-button>                                     <!-- [bindingdepropriété] -->
+    <br>                            
     <mat-radio-button [value]="typeProfil.COOPERATIVE"
       (click)="AfficherTypesCoop(true)">
       Coopérative
@@ -23,7 +23,7 @@
     <mat-form-field *ngIf="typeCoop$ | async as typesCoopData" appearance="fill">
       <mat-label>Type de coopérative</mat-label>
       <mat-select id="typeCoop" [formControlName]="inscriptionFormProperties.TYPE_COOP">
-        <mat-option *ngFor="let typeCoop of typesCoopData" [value]="typeCoop.id">
+        <mat-option *ngFor="let typeCoop of typesCoopData" [value]="typeCoop.type">
           {{typeCoop.type}}
         </mat-option>
       </mat-select>
@@ -31,12 +31,6 @@
     <br>
     <br>
   </div>
-
-  <!-- <mat-form-field appearance="fill">
-    <mat-label>Status</mat-label>
-    <input matInput [formControlName]="inscriptionFormProperties.TYPE_PROFIL">
-  </mat-form-field>
-  <br> -->
 
 
   <!-- NOM -->
