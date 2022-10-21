@@ -5,21 +5,21 @@
     <div class="typeUserLabel">
       <mat-label>Type d'utilisateur</mat-label>
     </div>
-    <mat-radio-button [value]="typeProfil.PARTICULIER"              
-      (click)="AfficherTypesCoop(false)">
+    <mat-radio-button [value]="typeProfil.PARTICULIER" (click)="AfficherTypesCoop(false)">
       Particulier
-    </mat-radio-button>                                     <!-- [bindingdepropriété] -->
-    <br>                            
-    <mat-radio-button [value]="typeProfil.COOPERATIVE"
-      (click)="AfficherTypesCoop(true)">
+    </mat-radio-button> <!-- [bindingdepropriété] -->
+    <br>
+    <mat-radio-button [value]="typeProfil.COOPERATIVE" (click)="AfficherTypesCoop(true)">
       Coopérative
     </mat-radio-button>
   </mat-radio-group>
   <br>
   <br>
 
-  <!-- LISTE TYPES COOP -->                               <!-- Pipe async déclenche auto un observable, gère lui mm le subscribe et unbscribe, le as = response en param de subscribe = valeurs retournées par l'observable-->
-  <div *ngIf="isCoop == true">                            <!-- Plus besoin de stocker dans typesCoopData (pe n'imp), gère tout dans le html-->
+  <!-- LISTE TYPES COOP -->
+  <!-- Pipe async déclenche auto un observable, gère lui mm le subscribe et unbscribe, le as = response en param de subscribe = valeurs retournées par l'observable-->
+  <div *ngIf="isCoop == true">
+    <!-- Plus besoin de stocker dans typesCoopData (pe n'imp), gère tout dans le html-->
     <mat-form-field *ngIf="typeCoop$ | async as typesCoopData" appearance="fill">
       <mat-label>Type de coopérative</mat-label>
       <mat-select id="typeCoop" [formControlName]="inscriptionFormProperties.TYPE_COOP">
@@ -74,6 +74,8 @@
       </button>
     </mat-form-field>
   </div>
+
+
 
   <!-- Afficher/cacher mot de passe V2 -->
   <!-- <mat-form-field appearance="fill">

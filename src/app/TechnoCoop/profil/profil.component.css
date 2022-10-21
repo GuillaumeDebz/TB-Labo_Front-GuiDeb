@@ -1,0 +1,19 @@
+.titleProfil{
+    font-weight: bolder;
+    font-size: 3em;
+    text-align: center;
+    color: rgba(78, 107, 214, 0.758);
+}
+
+.tableauProfil{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    }
+    
+.titleInfoProfil{
+        font-weight: bolder;
+        font-size: larger;
+        text-align: center;
+        color: rgba(78, 107, 214, 0.758);
+    }

@@ -1,1 +1,30 @@
-<p>liste-events works!</p>
+<form class="monForm" [formGroup]="myEventForm" class="monForm" (ngSubmit)="createEvent()">
+
+    <!-- NOM -->
+    <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput [formControlName]="eventsProperties.NOM">
+    </mat-form-field>
+    <br>
+
+
+    <!-- DATE -->
+    <mat-form-field appearance="fill">
+        <mat-label>Date</mat-label>
+        <input matInput [formControlName]="eventsProperties.DATE">
+    </mat-form-field>
+    <br>
+
+    <!-- LIEU -->
+    <mat-form-field appearance="fill">
+        <mat-label>Lieu</mat-label>
+        <input matInput [formControlName]="eventsProperties.LIEU">
+    </mat-form-field>
+    <br>
+
+
+    <p class="champsObligatoires"> * Champs obligatoires </p>
+    <br>
+    <button [disabled]="myEventForm.invalid" class="submitButton" type="submit">Submit</button>
+</form>
+<br>

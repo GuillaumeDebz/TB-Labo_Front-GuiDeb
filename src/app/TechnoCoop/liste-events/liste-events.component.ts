@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+// Service
+import { EventService } from 'src/app/shared/services/event.service';
+
+// Enum
+import { EventsProperties } from 'src/app/shared/models/enum/event-properties';
+
+// Interfaces
+import { Event } from 'src/app/shared/models/interfaces/event';
 
 @Component({
   selector: 'app-liste-events',
@@ -7,9 +17,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeEventsComponent implements OnInit {
 
-  constructor() { }
+  public myEventForm: FormGroup;
+  public readonly eventsProperties = EventsProperties;     // Public = dispo en html
+
+  constructor(
+    private fb: FormBuilder,
+    private serviceEvent: EventService
+  ) { 
+    this.myEventForm = this.generateForm();
+  }
 
   ngOnInit(): void {
+  }
+
+  private generateForm(): FormGroup {
+    const myEventForm = this.fb.group({
+      [EventsProperties.NOM]: [null, [Validators.minLength(2), Validators.required,]],       
+      [EventsProperties.DATE]: [new Date(), [Validators.required]],
+      [EventsProperties.LIEU]: [null, [Validators.required]],
+    },)
+    return myEventForm;
+  }
+
+  createEvent(){
+    
+    const newEvent : Event = {
+    name: this.myEventForm.get(EventsProperties.NOM)?.value,
+    date: this.myEventForm.get(EventsProperties.DATE)?.value,
+    lieu: this.myEventForm.get(EventsProperties.LIEU)?.value,
+    description: this.myEventForm.get(EventsProperties.DESCRIPTION)?.value,
+    }
+    
+    this.serviceEvent.newEVENT(newEvent).subscribe(response => console.log(response)
+    )
   }
 
 }

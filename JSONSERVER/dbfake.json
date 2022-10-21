@@ -59,6 +59,17 @@
       "email": "fermebl@email.be",
       "password": "motdepasseferme",
       "id": 2
+    },
+    {
+      "typeUser": "Particulier",
+      "typeCoop": null,
+      "name": "JhonCooper",
+      "email": "johncooper@email.be",
+      "password": "minimdp",
+      "id": 3
     }
+  ],
+  "event": [
+    {}
   ]
 }

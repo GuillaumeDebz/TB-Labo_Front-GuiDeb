@@ -1,6 +1,5 @@
 import { AbstractControl, ValidationErrors } from "@angular/forms";
 
-
 export function nameValidator(control : AbstractControl){
 
     let error : ValidationErrors | null = null

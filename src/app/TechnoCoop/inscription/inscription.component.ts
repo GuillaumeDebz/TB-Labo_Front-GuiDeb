@@ -1,13 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { InscriptionFormProperties } from 'src/app/shared/models/enum/form-inscription-properties';
-import { TypesCoopService } from 'src/app/shared/services/types-coop.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, Observable } from 'rxjs'
 import { takeUntil } from 'rxjs/operators'
 import { ObserversModule } from '@angular/cdk/observers';
+
+// Enum
+import { InscriptionFormProperties } from 'src/app/shared/models/enum/form-inscription-properties';
+import { TypeProfil } from 'src/app/shared/models/enum/type-profil';
+
+// Interfaces
 import { TypeCoop } from 'src/app/shared/models/interfaces/typeCoop';
 import { Profile } from 'src/app/shared/models/interfaces/profile';
-import { TypeProfil } from 'src/app/shared/models/enum/type-profil';
+
+// Service
+import { TypesCoopService } from 'src/app/shared/services/types-coop.service';
+
+// Validators
+// import { matchPasswordValidator } from "./validators/matchPassword.validator";
+import { nameValidator } from "./validators/name.validator";
 
 
 
@@ -27,15 +37,8 @@ export class InscriptionComponent implements OnInit {
   isCoop = false;
   typeProfil = TypeProfil
 
-  // Récupérer les types de data
-  // typesCoopData : TypeCoop[] = [];
-  // displayedColumns: string[] = ['id', 'type'];
-
   // Afficher/Cacher mot de passe
   public hide: boolean = true;
-
-  // Envoyer les données
- 
 
   // Subject    ==> $ à la fin: bonne pratique
   destroy$ = new Subject<void>()
@@ -76,11 +79,11 @@ export class InscriptionComponent implements OnInit {
     const myForm = this.fb.group({
       [InscriptionFormProperties.TYPE_USER]: [TypeProfil.PARTICULIER, [Validators.required]],
       [InscriptionFormProperties.TYPE_COOP]: [null],
-      [InscriptionFormProperties.NOM]: [null, [Validators.minLength(2), Validators.required]],                      // 1er élem= valeur par défaut, 2ème = objet avec param (validators etc) //pas obligé de mettre validators (2eme elem)  
+      [InscriptionFormProperties.NOM]: [null, [Validators.minLength(2), Validators.required, nameValidator]],                      // 1er élem= valeur par défaut, 2ème = objet avec param (validators etc) //pas obligé de mettre validators (2eme elem)  
       [InscriptionFormProperties.EMAIL]: [null, [Validators.email, Validators.required]],
       [InscriptionFormProperties.PASSWORD]: [null, [Validators.required, Validators.minLength(6)]],
       [InscriptionFormProperties.CONFIRMPASSWORD]: [null, [Validators.required, Validators.minLength(6)]],
-    })
+    },)
     return myForm;
   }
 
@@ -119,7 +122,6 @@ export class InscriptionComponent implements OnInit {
     
     this.serviceCoop.newUser(newProfile).subscribe(response => console.log(response)
     )
-
   }
 
 }
