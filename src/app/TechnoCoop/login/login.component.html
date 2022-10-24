@@ -1,0 +1,28 @@
+<h1 class="titleLogin"> Se connecter </h1>
+
+<form [formGroup]="formLogin" class="monForm" (ngSubmit)="generateForm()">
+
+  <br>
+      <!-- EMAIL -->
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput [formControlName]="loginProperties.EMAIL">
+  </mat-form-field>
+  <br>
+
+    <!-- MOT DE PASSE -->
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [formControlName]="loginProperties.PASSWORD">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <br>
+  
+      <button [disabled]="formLogin.invalid" class="submitButton" type="submit">Submit</button>
+  </form>
+  <br>

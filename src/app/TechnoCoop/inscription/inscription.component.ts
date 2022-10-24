@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject, Observable } from 'rxjs'
 import { takeUntil } from 'rxjs/operators'
-import { ObserversModule } from '@angular/cdk/observers';
 
 // Enum
 import { InscriptionFormProperties } from 'src/app/shared/models/enum/form-inscription-properties';

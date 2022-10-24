@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil</title>
-</head>
-
-<body>
-
-
-
-    <div>
+<div>
         <button *ngIf="!isConnect" (click)="login()" class="btn green darken-1">Login</button>
         <button *ngIf="isConnect" (click)="logout()" class="btn red darken-1">Logout</button>
 
@@ -48,6 +34,3 @@
             </ng-container>
         </div>
     </div>
-</body>
-
-</html>

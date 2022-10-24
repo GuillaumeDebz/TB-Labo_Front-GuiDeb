@@ -67,6 +67,30 @@
       "email": "johncooper@email.be",
       "password": "minimdp",
       "id": 3
+    },
+    {
+      "typeUser": "Particulier",
+      "typeCoop": null,
+      "name": null,
+      "email": null,
+      "password": "ddddd",
+      "id": 4
+    },
+    {
+      "typeUser": "Particulier",
+      "typeCoop": null,
+      "name": null,
+      "email": null,
+      "password": "ddddd",
+      "id": 5
+    },
+    {
+      "typeUser": "Particulier",
+      "typeCoop": null,
+      "name": null,
+      "email": null,
+      "password": "ddddd",
+      "id": 6
     }
   ],
   "event": [

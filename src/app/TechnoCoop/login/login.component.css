@@ -1,0 +1,13 @@
+.titleLogin {
+    text-align: center;
+    padding-top: 1em;
+    font-family: 'ethnocentric', 'arial', sans-serif;
+    color: rgba(78, 107, 214, 0.758);
+}
+
+.monForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+  }

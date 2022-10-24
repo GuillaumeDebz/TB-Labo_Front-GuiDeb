@@ -31,6 +31,7 @@ import { ContactComponent } from './TechnoCoop/contact/contact.component';
 import { InscriptionComponent } from './TechnoCoop/inscription/inscription.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProfilComponent } from './TechnoCoop/profil/profil.component';
+import { LoginComponent } from './TechnoCoop/login/login.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ProfilComponent } from './TechnoCoop/profil/profil.component';
     ListeEventsComponent,
     ContactComponent,
     InscriptionComponent,
-    ProfilComponent
+    ProfilComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

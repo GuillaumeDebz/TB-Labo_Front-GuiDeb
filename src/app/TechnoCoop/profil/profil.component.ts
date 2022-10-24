@@ -14,6 +14,7 @@ export class ProfilComponent implements OnInit {
 
   isConnect : boolean = false
 
+  // AFFICHAGE PROFIL //
   displayedColumns: string[] = ['name', 'typeCoop', 'email', 'password'];
   listeCoopData : Profile[] = [];
   listeCoop$: Observable<Profile[]>;
