@@ -47,7 +47,7 @@
     {
       "typeUser": "Coopérative",
       "typeCoop": "Commerce de gros et détail",
-      "name": "salut",
+      "name": "TechnoShop",
       "email": "monemail@email.com",
       "password": "motdepassesecret",
       "id": 1
@@ -67,30 +67,6 @@
       "email": "johncooper@email.be",
       "password": "minimdp",
       "id": 3
-    },
-    {
-      "typeUser": "Particulier",
-      "typeCoop": null,
-      "name": null,
-      "email": null,
-      "password": "ddddd",
-      "id": 4
-    },
-    {
-      "typeUser": "Particulier",
-      "typeCoop": null,
-      "name": null,
-      "email": null,
-      "password": "ddddd",
-      "id": 5
-    },
-    {
-      "typeUser": "Particulier",
-      "typeCoop": null,
-      "name": null,
-      "email": null,
-      "password": "ddddd",
-      "id": 6
     }
   ],
   "event": [
