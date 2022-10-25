@@ -37,19 +37,4 @@ export class AppComponent {
     }
   }
 
-
-  // afficherMonCompte() {
-  //   let textMonCompte = document.getElementById("monCompteNav")
-  //   if (textMonCompte) {
-  //     textMonCompte.innerText = "Mon compte"
-  //   }
-  // }
-
-  // cacherMonCompte() {
-  //   let textMonCompte = document.getElementById("monCompteNav")
-  //   if (textMonCompte) {
-  //     textMonCompte.innerText = ""
-  //   }
-  // }
-
 }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { map, Observable } from 'rxjs'
 import { Profile } from 'src/app/shared/models/interfaces/profile';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -11,25 +12,43 @@ export class LoginService {
 
   baseURL: string = "http://localhost:3000/";
 
-  isConnect : boolean = false
+  isConnect: boolean = false
+  connectedUser: Profile | null = null
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private routeur: Router) { }
 
-  
-  getInfoProfil(): Observable<Profile[]>{
+
+  getInfoProfil(): Observable<Profile[]> {
     return this.http.get<Profile[]>(this.baseURL + "user")
   }
 
 
-  login(){
-    this.isConnect = true
-    sessionStorage.setItem("isConnect", JSON.stringify(this.isConnect))
+  login(email: string, password: string): Observable<boolean> {
+    let params = new HttpParams();
+    params.set("email", email)        //query params
+    params.set("password", password)
+
+    return this.http.get<Profile[]>(this.baseURL + "user", { params: params }).pipe(
+      map((profiles: Profile[]) => {
+        if (profiles.length) {
+          this.isConnect = true
+          this.connectedUser = profiles[0]
+          localStorage.setItem("connectedUser", JSON.stringify(profiles[0]))
+          return true
+        }
+        return false;
+      })
+    )
   }
 
 
-  logout(){
+  logout() {
     this.isConnect = false
-    sessionStorage.setItem("isConnect", JSON.stringify(this.isConnect))
+    this.connectedUser = null
+    localStorage.removeItem("connectedUser")
+    this.routeur.navigate(["compo", "login"])
   }
 
 }

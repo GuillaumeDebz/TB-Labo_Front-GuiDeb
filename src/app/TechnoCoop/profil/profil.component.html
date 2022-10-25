@@ -1,11 +1,9 @@
 <div>
-        <button *ngIf="!isConnect" (click)="login()" class="btn green darken-1">Login</button>
-        <button *ngIf="isConnect" (click)="logout()" class="btn red darken-1">Logout</button>
 
         <h1 class="titleProfil"> Mon profil </h1>
         <div class="tableauProfil">
-            <ng-container *ngIf="listeCoop$ | async as listeCoopData">
-                <table mat-table class="mat-elevation-z8" [dataSource]="listeCoop$" style="width: 60%">
+            <ng-container *ngIf="listeUser$ | async as infoProfil">
+                <table mat-table class="mat-elevation-z8" [dataSource]="listeUser$" style="width: 80%">
 
                     <ng-container matColumnDef="name">
                         <th class="titleInfoProfil" mat-header-cell *matHeaderCellDef> Nom </th>
@@ -34,3 +32,5 @@
             </ng-container>
         </div>
     </div>
+
+    <button *ngIf="isConnect" (click)="logout()" class="logOutButton">Logout</button>

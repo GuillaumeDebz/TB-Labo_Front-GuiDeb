@@ -17,27 +17,22 @@ export class ProfilComponent implements OnInit {
   // AFFICHAGE PROFIL //
   displayedColumns: string[] = ['name', 'typeCoop', 'email', 'password'];
   listeCoopData : Profile[] = [];
-  listeCoop$: Observable<Profile[]>;
+  listeUser$: Observable<Profile[]>;
 
   constructor(
     private serviceProfil : ProfilService,
     private serviceLogin : LoginService
   ) {
-    this.listeCoop$ = this.serviceProfil.getInfoProfil();     
+    this.listeUser$ = this.serviceProfil.getInfoProfil(this.serviceLogin.connectedUser?.id);     
    }
 
   ngOnInit(): void {
     this.isConnect = this.serviceLogin.isConnect
   }
 
-  login(){
-    this.serviceLogin.login()
-    this.isConnect = this.serviceLogin.isConnect
-  }
 
   logout(){
     this.serviceLogin.logout()
-    this.isConnect = this.serviceLogin.isConnect
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { map, Observable } from 'rxjs'
 import { Profile } from 'src/app/shared/models/interfaces/profile';
 
 
@@ -13,8 +13,8 @@ export class ProfilService {
 
   constructor(private http: HttpClient) { }
 
-  getInfoProfil(): Observable<Profile[]>{
-    return this.http.get<Profile[]>(this.baseURL + "user")
+  getInfoProfil(id: number): Observable<Profile[]>{
+    return this.http.get<Profile>(this.baseURL + "user/" + id).pipe(map(profil => [profil]))
   }
 
 }

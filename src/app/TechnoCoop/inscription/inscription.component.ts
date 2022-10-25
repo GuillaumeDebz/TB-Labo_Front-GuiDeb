@@ -78,7 +78,7 @@ export class InscriptionComponent implements OnInit {
   private generateForm(): FormGroup {
     const myForm = this.fb.group({
       [InscriptionFormProperties.TYPE_USER]: [TypeProfil.PARTICULIER, [Validators.required]],
-      [InscriptionFormProperties.TYPE_COOP]: [null],
+      [InscriptionFormProperties.TYPE_COOP]: [null], 
       [InscriptionFormProperties.NOM]: [null, [Validators.minLength(2), Validators.required, nameValidator]],                      // 1er élem= valeur par défaut, 2ème = objet avec param (validators etc) //pas obligé de mettre validators (2eme elem)  
       [InscriptionFormProperties.EMAIL]: [null, [Validators.email, Validators.required]],
       [InscriptionFormProperties.PASSWORD]: [null, [Validators.required, Validators.minLength(6)]],
@@ -117,7 +117,7 @@ export class InscriptionComponent implements OnInit {
     typeCoop: this.myForm.get(InscriptionFormProperties.TYPE_COOP)?.value,
     name: this.myForm.get(InscriptionFormProperties.NOM)?.value,
     email: this.myForm.get(InscriptionFormProperties.EMAIL)?.value,
-    password:this.myForm.get(InscriptionFormProperties.PASSWORD)?.value
+    password: this.myForm.get(InscriptionFormProperties.PASSWORD)?.value
     }
     
     this.serviceCoop.newUser(newProfile).subscribe(response => console.log(response)

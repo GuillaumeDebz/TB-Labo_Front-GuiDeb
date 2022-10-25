@@ -1,12 +1,16 @@
+.titleListeCoop{
+    font-weight: bolder;
+    font-size: larger;
+    text-align: center;
+    color: rgba(78, 107, 214, 0.758);
+    font-family: 'ethnocentric', 'arial', sans-serif;
+    padding-top: 2em;
+}
+
+
 .tableauListeCoop{
 display: flex;
 justify-content: center;
 text-align: center;
 }
 
-.titleListeCoop{
-    font-weight: bolder;
-    font-size: larger;
-    text-align: center;
-    color: rgba(78, 107, 214, 0.758);
-}

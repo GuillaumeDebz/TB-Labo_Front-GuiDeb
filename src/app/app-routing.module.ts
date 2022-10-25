@@ -23,16 +23,20 @@ import { ListeCooperativesComponent } from './TechnoCoop/liste-cooperatives/list
 // Contact
 import { ContactComponent } from './TechnoCoop/contact/contact.component';
 
+// Guard
+import { LoginGuard } from './shared/guards/guardProfil';
+
 const routes: Routes = [
   { path: "", component: HomeComponent },
 
 	{ path: "compo", children: [
 		{ path: "home", component: HomeComponent },
-		{ path: "events", component: ListeEventsComponent },
+		{ path: "events", canActivate : [LoginGuard], component: ListeEventsComponent },
 		{ path: "listecooperatives", component: ListeCooperativesComponent },
 		{ path: "inscription", component: InscriptionComponent },
     { path: "contact", component: ContactComponent },
-    { path: "login", component: LoginComponent }
+    { path: "login", component: LoginComponent },
+    { path: "profil", canActivate : [LoginGuard], component: ProfilComponent}
   ]},
 
 

@@ -13,6 +13,11 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
+  // RECUPERER LISTE EVENTS //
+  getListeEvents(): Observable<Event[]>{
+    return this.http.get<Event[]>(this.baseURL + "typeEvent")
+  }
+
   // CREER EVENT
   newEVENT(event: Event): Observable<Event> {
     return this.http.post<Event>(this.baseURL + "event", event);

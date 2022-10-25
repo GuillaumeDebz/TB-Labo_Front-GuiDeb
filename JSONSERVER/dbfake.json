@@ -67,6 +67,14 @@
       "email": "johncooper@email.be",
       "password": "minimdp",
       "id": 3
+    },
+    {
+      "typeUser": "Coopérative",
+      "typeCoop": "Pharmacies coopératives",
+      "name": "Medicoop",
+      "email": "medicoop@email.be",
+      "password": "mdp1234",
+      "id": 4
     }
   ],
   "event": [

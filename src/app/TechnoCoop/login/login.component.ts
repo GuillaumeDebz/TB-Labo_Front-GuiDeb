@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LoginProperties } from 'src/app/shared/models/enum/login-properties';
 import { LoginService } from 'src/app/shared/services/login.service';
 
@@ -25,13 +26,16 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private serviceLogin: LoginService
+    private serviceLogin: LoginService,
+    private routeur: Router
   ) {
     this.formLogin = this.generateForm();
   }
 
   ngOnInit(): void {
-    this.isConnect = this.serviceLogin.isConnect
+    if (this.serviceLogin.isConnect) {
+      this.routeur.navigate(["compo", "profil"])
+    }
   }
 
   public generateForm(): FormGroup {
@@ -42,14 +46,17 @@ export class LoginComponent implements OnInit {
     return formLogin;
   }
 
-
-  login(){
-    this.serviceLogin.login()
-    this.isConnect = this.serviceLogin.isConnect
+  public submitLogin() {
+    if (this.formLogin.valid) {
+      this.serviceLogin.login(
+        this.formLogin.get(LoginProperties.EMAIL)?.value,
+        this.formLogin.get(LoginProperties.PASSWORD)?.value
+      ).subscribe(loginOk =>{
+        if (loginOk) {
+          this.routeur.navigate(["compo", "profil"])
+        }
+      })
+    }
   }
 
-  logout(){
-    this.serviceLogin.logout()
-    this.isConnect = this.serviceLogin.isConnect
-  }
 }
