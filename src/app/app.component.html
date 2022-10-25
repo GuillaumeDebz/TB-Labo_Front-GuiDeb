@@ -1,27 +1,26 @@
 <!-- HEADER -->
 <mat-toolbar class="header">
-  <a (click)="sidenav.toggle()"> 
+  <a (click)="sidenav.toggle(); afficherMenu(menuAffiche)"> 
     <img src="../assets/technocoop_logo.jpg" alt="Logo Techno'Coop" width="50px">
   </a>
-  <span class="spacer"></span>
-  <h1 class="titleTechnoCoop"> TECHNO'COOP </h1>
-  <span class="spacer"></span>
-   <!-- <mat-icon class="iconMonCompte"> account_box </mat-icon> -->
+ 
+  <!-- "MENU" AFFICHE OU NON  -->
+  <p *ngIf="!menuAffiche" id="MenuTitle"> {{textMenu}} </p>
 
-  <a routerLink="compo/login" class="monCompte">
+  <span class="spacer"></span>
+  <h1 class="titleTechnoCoop"> ​TECHNO🌻COOP​ </h1>
+  <span class="spacer"></span>
+
+  <P *ngIf="!monCompteAffiche" id="monCompteNav"> {{textMonCompte}} </P> 
+  <a routerLink="compo/login" class="monCompte" (mouseenter)="afficherMonCompte(monCompteAffiche)" (mouseleave)="afficherMonCompte(monCompteAffiche)">
     <mat-icon> account_circle </mat-icon>
   </a>
-
-  <!-- <mat-form-field class="monCompte" appearance="fill">
-    <mat-label>Mon compte</mat-label>
-    <mat-select>
-      <mat-option value="side">Email</mat-option>
-      <mat-option value="over">Mot de passe</mat-option>
-    </mat-select>
-  </mat-form-field> -->
-
 </mat-toolbar>
 
+
+
+
+<!-- MENU  -->
 <mat-sidenav-container class="container">
   <mat-sidenav #sidenav mode="side" opened class="sidenav">
 
@@ -40,6 +39,9 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
+
 
 <!-- FOOTER -->
 <mat-toolbar class="myfooter">

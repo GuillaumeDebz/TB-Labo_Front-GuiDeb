@@ -8,9 +8,48 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'LaboAngularGDE';
 
+  // AFFICHAGE "MENU"
+  menuAffiche= true;
+  textMenu= "";
+
+  // AFFICHER "MON COMPTE"
+  monCompteAffiche= true;
+  textMonCompte= "";
+
+
   constructor() {
   }
 
-  
-  
+  afficherMenu(showMenu: boolean) {
+    this.menuAffiche = !showMenu
+
+    if (!this.menuAffiche) {
+      this.textMenu= "👈🏻​​ Menu​"
+    }
+  }
+
+
+  afficherMonCompte(showCompte: boolean) {
+    this.monCompteAffiche = !showCompte
+
+    if (!this.monCompteAffiche) {
+      this.textMonCompte = "Mon compte"
+    }
+  }
+
+
+  // afficherMonCompte() {
+  //   let textMonCompte = document.getElementById("monCompteNav")
+  //   if (textMonCompte) {
+  //     textMonCompte.innerText = "Mon compte"
+  //   }
+  // }
+
+  // cacherMonCompte() {
+  //   let textMonCompte = document.getElementById("monCompteNav")
+  //   if (textMonCompte) {
+  //     textMonCompte.innerText = ""
+  //   }
+  // }
+
 }

@@ -20,6 +20,7 @@ import { nameValidator } from "./validators/name.validator";
 
 
 
+
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
